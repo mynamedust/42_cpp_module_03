@@ -3,7 +3,7 @@ SRCS		= $(wildcard ./*.cpp)
 OBJS_DIR	= ./obj
 OBJS		= $(SRCS:./%.cpp=$(OBJS_DIR)/%.o)
 CC			= c++
-CFLAGS		= -Wall -Werror -Wextra -std=c++98 -I ./
+CFLAGS		= -Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++98 -I ./
 MAKEFILE	= ./Makefile
 
 all: $(NAME)

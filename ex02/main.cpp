@@ -1,6 +1,6 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
-#include "FlagTrap.hpp"
+#include "FragTrap.hpp"
 
 int main() {
 	// Тестирование класса ClapTrap
@@ -15,8 +15,8 @@ int main() {
 	scav.guardGate();
 
 	// Тестирование класса ScavTrap
-	FlagTrap flag("Flag");
-	flag.attack("Grigor");
-	flag.highFivesGuys();
+	FragTrap frag("Frag");
+	frag.attack("Grigor");
+	frag.highFivesGuys();
 	return 0;
 }
