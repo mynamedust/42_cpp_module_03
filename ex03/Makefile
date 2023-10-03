@@ -1,4 +1,4 @@
-NAME		= frag
+NAME		= diamond
 SRCS		= $(wildcard ./*.cpp)
 OBJS_DIR	= ./obj
 OBJS		= $(SRCS:./%.cpp=$(OBJS_DIR)/%.o)
