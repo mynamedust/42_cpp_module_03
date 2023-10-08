@@ -1,5 +1,13 @@
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap() : ClapTrap() {
+	_hitPoints = 100;
+	_energyPoints = 50;
+	_damage = 20;
+
+	std::cout << "[" << this->_name << "]" << " Evolved into a Scav Trap. Fear, mortal!" << std::endl;
+}
+
 ScavTrap::ScavTrap(const string& name) : ClapTrap(name) {
 	_hitPoints = 100;
 	_energyPoints = 50;
@@ -35,5 +43,7 @@ void ScavTrap::attack(const string &target) {
 }
 
 void ScavTrap::guardGate() {
+	if (!status("attack"))
+		return;
 	std::cout << "[" <<_name << "]" << " goes into GUARD GATE mode!" << std::endl;
 }

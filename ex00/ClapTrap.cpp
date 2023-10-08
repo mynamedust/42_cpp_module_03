@@ -7,7 +7,7 @@ ClapTrap::ClapTrap() : _hitPoints(10), _energyPoints(10), _damage(0) {
 
 ClapTrap::ClapTrap(const string& name) : _hitPoints(10), _energyPoints(10), _damage(0) {
 	_name = name;
-	std::cout << "Initialized new Clap Trap. " << "[" <<_name << "]" << " ready for fight." << std::endl;
+	std::cout << "[" <<_name << "]" << " Initialized new Clap Trap. Ready for fight." << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& trap) {
@@ -15,7 +15,7 @@ ClapTrap::ClapTrap(const ClapTrap& trap) {
 	_hitPoints = trap._hitPoints;
 	_energyPoints = trap._energyPoints;
 	_damage = trap._damage;
-	std::cout << "Copied new Clap Trap. " << "[" <<_name << "]" << " ready for fight." << std::endl;
+	std::cout << "[" <<_name << "]" << " Copied new Clap Trap. Ready for fight." << std::endl;
 }
 
 ClapTrap::~ClapTrap() {
@@ -47,7 +47,7 @@ bool ClapTrap::status(string event) {
 void ClapTrap::attack(const string &target) {
 	if (!status("attack"))
 		return;
-	std::cout << "[" <<_name << "]" << " attacked " << target << " ,causing " << _damage << " points of damage!" << std::endl;
+	std::cout << "[" <<_name << "]" << " attacked " << target << ", causing " << _damage << " points of damage!" << std::endl;
 	_energyPoints--;
 }
 
@@ -60,11 +60,13 @@ void ClapTrap::takeDamage(unsigned int amount) {
 		return;
 	}
 	_hitPoints -= amount;
+	std::cout << "[" <<_name << "]" << " takes " << amount << " damage. HP: " << _hitPoints << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
 	if (!status("attack"))
 		return;
-	std::cout << "[" <<_name << "]" << " repaired himself for " << amount << " points. HP: " << _hitPoints << std::endl;
+	_hitPoints += amount;
 	_energyPoints--;
+	std::cout << "[" <<_name << "]" << " repaired himself for " << amount << " points. HP: " << _hitPoints << std::endl;
 }

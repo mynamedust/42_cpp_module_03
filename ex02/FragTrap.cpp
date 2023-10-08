@@ -1,5 +1,13 @@
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap() : ClapTrap() {
+	_hitPoints = 100;
+	_energyPoints = 100;
+	_damage = 30;
+
+	std::cout << "[" << this->_name << "]" << " Evolved into a Frag Trap. What does this mean?" << std::endl;
+}
+
 FragTrap::FragTrap(const string& name) : ClapTrap(name) {
 	_hitPoints = 100;
 	_energyPoints = 100;
@@ -28,5 +36,7 @@ FragTrap& FragTrap::operator=(const FragTrap& scav) {
 }
 
 void FragTrap::highFivesGuys() {
+	if (!status("attack"))
+		return;
 	std::cout << "[" << this->_name << "]" << " give a high five. Yeeeaa!" << std::endl;
 }

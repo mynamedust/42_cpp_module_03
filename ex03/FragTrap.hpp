@@ -5,9 +5,10 @@
 
 class FragTrap : public virtual ClapTrap{
 public:
+	FragTrap();
 	FragTrap(const string& name);
 	FragTrap(const FragTrap& flag);
-	~FragTrap();
+	virtual ~FragTrap();
 
 	FragTrap& operator=(const FragTrap& flag);
 	void highFivesGuys(void);

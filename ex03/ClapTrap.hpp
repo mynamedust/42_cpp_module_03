@@ -12,12 +12,13 @@ protected:
 	unsigned int _energyPoints;
 	unsigned int _damage;
 public:
+	ClapTrap();
 	ClapTrap(const string& name);
 	ClapTrap(const ClapTrap& trap);
-	~ClapTrap();
+	virtual ~ClapTrap();
 	ClapTrap& operator=(const ClapTrap& trap);
 
-	void attack(const string& target);
+	virtual void attack(const string& target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 	bool status(string event);

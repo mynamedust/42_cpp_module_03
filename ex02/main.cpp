@@ -13,6 +13,8 @@ int main() {
 	ScavTrap scav("Scav");
 	scav.attack("Grigor");
 	scav.guardGate();
+	scav.takeDamage(200);
+	scav.guardGate();
 
 	// Тестирование класса ScavTrap
 	FragTrap frag("Frag");

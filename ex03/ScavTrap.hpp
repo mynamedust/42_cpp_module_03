@@ -5,12 +5,13 @@
 
 class ScavTrap : public virtual ClapTrap {
 public:
+	ScavTrap();
 	ScavTrap(const string& name);
 	ScavTrap(const ScavTrap& scav);
-	~ScavTrap();
+	virtual ~ScavTrap();
 	ScavTrap& operator=(const ScavTrap& scav);
 
-	void attack(const string& target);
+	virtual void attack(const string& target);
 	void guardGate();
 };
 
