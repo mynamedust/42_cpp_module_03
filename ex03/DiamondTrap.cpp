@@ -1,5 +1,15 @@
 #include "DiamondTrap.hpp"
 
+DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap() {
+	this->_name = "No_name";
+	this->_hitPoints = FragTrap::_hitPoints;
+	this->_energyPoints = ScavTrap::_energyPoints;
+	this->_damage = FragTrap::_damage;
+
+	this->ClapTrap::_name = this->_name + "_clap_name";
+	std::cout << "[" << this->_name << "]" << " Evolved into a DIAMOND TRAP. かかってこいよ" << std::endl;
+}
+
 DiamondTrap::DiamondTrap(const string& name) : ClapTrap(name), ScavTrap(name), FragTrap(name) {
 	this->_name = name;
 	this->_hitPoints = FragTrap::_hitPoints;
