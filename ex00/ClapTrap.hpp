@@ -24,5 +24,4 @@ public:
 	bool status(string event);
 };
 
-
 #endif
