@@ -1,5 +1,10 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap() : _hitPoints(10), _energyPoints(10), _damage(0) {
+	_name = "*no name*";
+	std::cout << "Initialized new Clap Trap. " << "[" <<_name << "]" << " ready for fight." << std::endl;
+}
+
 ClapTrap::ClapTrap(const string& name) : _hitPoints(10), _energyPoints(10), _damage(0) {
 	_name = name;
 	std::cout << "Initialized new Clap Trap. " << "[" <<_name << "]" << " ready for fight." << std::endl;

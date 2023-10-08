@@ -12,6 +12,7 @@ private:
 	unsigned int _energyPoints;
 	unsigned int _damage;
 public:
+	ClapTrap();
 	ClapTrap(const string& name);
 	ClapTrap(const ClapTrap& trap);
 	~ClapTrap();
